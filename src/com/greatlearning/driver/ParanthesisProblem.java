@@ -1,4 +1,5 @@
 package com.greatlearning.driver;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class ParanthesisProblem {
@@ -7,9 +8,15 @@ public class ParanthesisProblem {
 
 	public static void main(String[] args) {
 
-		String expression = "{[]}()";
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter the expression");
+		String expression =sc.next();
+		//String expression = "{[]}())";
 		boolean result = checkBalance(expression);
-		System.out.println(result);
+		if(result)
+			System.out.println("The entered String "+expression+" has Balanced Brackets");
+		else
+			System.out.println("The entered Strings "+expression+" do not contain Balanced Brackets");
 
 	}
 	private static boolean checkBalance(String expression) {
